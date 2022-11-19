@@ -3,9 +3,10 @@ import { useRouteError } from "react-router-dom"
 export default function ErrorPage() {
     const error = useRouteError();
     console.error(error);
+    console.log(error.statusText);
 
     return (
-        <div className="error-page">
+        <div id="error-page">
             <h1>Bruh</h1>
             <p>An unexpected error has occurred!</p>
             <p>
