@@ -93,6 +93,7 @@ a {
 }
 
 .navbar-items, main {
+  margin: 0 auto;
   width: 100%;
   max-width: 800px;
   padding: 15px;
@@ -107,8 +108,6 @@ a {
   padding: 6px 10px;
   border-radius: 3px;
 }
-
-
 
 .navbar-links a.active, a.active h2 {
   background-color: var(--secondary);
