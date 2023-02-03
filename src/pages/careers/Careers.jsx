@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Career from "../../../components/Career";
+import Career from "../../components/Career";
 
 export default function Careers() {
   const careers = useLoaderData();
@@ -10,6 +10,7 @@ export default function Careers() {
 
   return (
     <div className="careers">
+      <h2>Careers</h2>
       {careersNodes}
     </div>
   )

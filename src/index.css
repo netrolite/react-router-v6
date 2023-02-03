@@ -130,6 +130,10 @@ a {
   background-color: var(--secondary);
 }
 
+main {
+  margin-top: 30px;
+}
+
 .career {
   padding: 20px;
   margin-bottom: 15px;
@@ -150,6 +154,11 @@ a:hover .career .title {
   color: var(--secondary);
 }
 
-main {
-  margin-top: 30px;
+.career-details .detail {
+  margin-bottom: 10px;
+}
+
+.career-details .detail-name {
+  color: rgb(143, 143, 143);
+  margin-right: 5px;
 }
