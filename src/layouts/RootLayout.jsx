@@ -10,6 +10,7 @@ export default function RootLayout() {
             <div className="navbar-links">
               <NavLink to="/">Home</NavLink>
               <NavLink to="about">About</NavLink>
+              <NavLink to="careers">Careers</NavLink>
               <NavLink to="help">Help</NavLink>
             </div>
           </div>

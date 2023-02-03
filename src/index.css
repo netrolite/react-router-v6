@@ -75,7 +75,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -122,6 +122,26 @@ a {
 
 .navbar-links a.active, a.active h2 {
   background-color: var(--secondary);
+}
+
+.career {
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.career .title {
+  margin-bottom: 5px;
+}
+
+.career .location {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+a:hover .career .title {
+  color: var(--secondary);
 }
 
 main {
