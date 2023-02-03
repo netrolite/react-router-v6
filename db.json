@@ -42,11 +42,5 @@
       "salary": 30000,
       "location": "London, UK"
     }
-  ],
-  "cars": [
-    {
-      "make": "toyota",
-      "maxSpeedMph": 140
-    }
   ]
 }

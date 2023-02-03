@@ -97,6 +97,11 @@ a {
   border-bottom: 2px solid var(--secondary);
 }
 
+.text-logo {
+  white-space: nowrap;
+  margin-right: 15px;
+}
+
 .navbar-items {
   display: flex;
   justify-content: space-between;
@@ -111,6 +116,7 @@ a {
 }
 
 .navbar-links {
+  overflow: auto;
   display: flex;
   gap: 20px;
 }

@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start-json-server": "json-server -p 3001 -w ./db.json",
+    "publish": "npm run build && serve -s dist -l 5000"
   },
   "dependencies": {
     "react": "^18.2.0",
