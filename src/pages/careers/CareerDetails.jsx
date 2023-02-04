@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+
 export default function CareerDetails() {
   const { careerId } = useParams();
   const [details, setDetails] = useState(null);
-
-  useEffect(() => {
-    (async () => {
-      const response = await fetch(`http://localhost:3001/careers/${careerId}`);
-      setDetails(await response.json());
-    })();
-  }, [])
 
   console.log(details);
 
@@ -18,7 +12,7 @@ export default function CareerDetails() {
     <div className="career-details">
       <h2>Career details</h2>
       {
-        details ?
+        details &&
         <>
           <div className="detail">
             <span className="detail-name">Title: </span>
@@ -32,9 +26,14 @@ export default function CareerDetails() {
             <span className="detail-name">Salary: </span>
             <span className="detail-value">{details.salary}</span>
           </div>
-        </> :
-        "Loading details..."
+        </>
       }
     </div>
   )
+}
+
+
+export async function careerDetailsLoader({ params }) {
+  const { careerId } = params;
+  return 
 }

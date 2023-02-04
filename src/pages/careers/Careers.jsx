@@ -18,5 +18,5 @@ export default function Careers() {
 
 export async function careersLoader() {
   const response = await fetch("http://localhost:3001/careers");
-  return response.json();
+  return await response.json();
 }

@@ -4,13 +4,13 @@ import {
   RouterProvider,
   Route
 } from "react-router-dom";
-// components
+// pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import FAQ from "./pages/help/FAQ";
 import Contact from "./pages/help/Contact";
 import Careers, { careersLoader } from "./pages/careers/Careers";
-import CareerDetails from "./pages/careers/CareerDetails";
+import CareerDetails, { careerDetailsLoader } from "./pages/careers/CareerDetails";
 import NotFound from "./pages/NotFound";
 // layouts
 import RootLayout from  "./layouts/RootLayout";
@@ -29,8 +29,16 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="careers">
-        <Route index element={<Careers />} loader={careersLoader} />
-        <Route path=":careerId" element={<CareerDetails />} />
+        <Route
+          index
+          element={<Careers />}
+          loader={careersLoader}
+        />
+        <Route
+          path=":careerId"
+          element={<CareerDetails />} 
+          loader={careerDetailsLoader}
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />
