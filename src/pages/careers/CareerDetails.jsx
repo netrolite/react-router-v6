@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 
 
 export default function CareerDetails() {
-  const { careerId } = useParams();
-  const [details, setDetails] = useState(null);
+  const details = useLoaderData();
 
   console.log(details);
 
@@ -33,7 +32,7 @@ export default function CareerDetails() {
 }
 
 
-export async function careerDetailsLoader({ params }) {
-  const { careerId } = params;
-  return 
+export async function careerDetailsLoader({ params: { careerId }}) {
+  const response = await fetch(`http://localhost:3001/careers/${careerId}`);
+  return await response.json();
 }
