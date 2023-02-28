@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { LoaderFunction, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import Career from "../../components/Career";
 
 export interface ICareer {
@@ -10,7 +10,6 @@ export interface ICareer {
 
 export default function Careers() {
   const careers = useLoaderData() as ICareer[];
-  console.log(careers);
 
   const careersNodes = careers.map(career => (
     <Career {...career} key={career.id} />

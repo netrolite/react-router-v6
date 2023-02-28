@@ -6,8 +6,6 @@ import { ICareer } from "./Careers";
 export default function CareerDetails() {
   const details = useLoaderData() as ICareer;
 
-  console.log(details);
-
   return (
     <div className="career-details">
       <>
@@ -35,7 +33,19 @@ export default function CareerDetails() {
 }
 
 
-export async function careerDetailsLoader(careerId: LoaderFunctionArgs): Promise<any> {
+// interface for the loader function arguments (defined in vscode internals)
+// interface DataFunctionArgs {
+//   request: Request;
+//   params: Params;
+//   context?: any;
+// }
+
+export const careerDetailsLoader: LoaderFunction = async ({params: { careerId }}) => {
   const response = await fetch(`http://localhost:3001/careers/${careerId}`);
-  return await response.json();
+  if (!response.ok) {
+    throw new Error("Career does not exist");
+  }
+
+  const data: ICareer = await response.json();
+  return data;
 }
