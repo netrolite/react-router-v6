@@ -110,7 +110,22 @@ a {
   align-items: center;
 }
 
-.navbar-items, main {
+.breadcrumbs {
+  display: flex;
+  gap: 10px;
+}
+
+.breadcrumb::after {
+  content: ">";
+  color: gray;
+  margin-left: 10px;
+}
+
+.breadcrumb:last-child::after {
+  content: "";
+}
+
+.navbar-items, .breadcrumbs, main {
   margin: 0 auto;
   width: 100%;
   max-width: 800px;
