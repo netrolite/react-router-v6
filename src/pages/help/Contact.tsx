@@ -4,18 +4,6 @@ import { Form, redirect, useActionData, useNavigate } from "react-router-dom";
 export default function Contact() {
   interface IActionData { error: string };
   const actionData = useActionData() as IActionData;
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigateToRoot();
-  }, [])
-  
-  // can't use "navigate()" inside useEffect, useMemo or useReducer since it breaks the react rules
-  function navigateToRoot() {
-    if (Math.random() > 0.9) {
-      navigate("/");
-    }
-  }
 
   return (
     <>
