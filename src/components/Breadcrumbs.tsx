@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom"
 
 export default function Breadcrumbs() {
@@ -7,25 +6,29 @@ export default function Breadcrumbs() {
 
   return (
     <div className="breadcrumbs-container">
-      <ul className="breadcrumbs">{breadcrumbsNodes}</ul>
+      <ul className="breadcrumbs">
+        <li className="breadcrumb">
+          <Link to="/">Home</Link>
+        </li>
+        {breadcrumbsNodes}
+      </ul>
     </div>
   )
 }
 
 function getBreadcrumbs(location: ReturnType<typeof useLocation>) {
-  const { pathname } = location;
-  const splitPath = pathname.split("/");
-  // if pathname is root, the splitPath is ["", ""]. So we remove the last emtpy string
-  if (pathname === "/") splitPath.pop();
+  const { pathname: url } = location;
+  const splitUrl = url
+    .split("/")
+    .filter(pathPart => pathPart !== "");
   
   let currentLink = "";
-  return splitPath.map((pathPart, i) => {
-    currentLink += `/${pathPart}`;
-    
+  return splitUrl.map((pathPart, i) => {
+    currentLink += `/${pathPart}`
     return (
       <li className="breadcrumb" key={i}>
         <Link to={currentLink}>
-          {pathPart === "" ? "Home" : pathPart}
+          {pathPart}
         </Link>
       </li>
     )
