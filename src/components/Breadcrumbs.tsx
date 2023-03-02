@@ -8,7 +8,7 @@ export default function Breadcrumbs() {
     <div className="breadcrumbs-container">
       <ul className="breadcrumbs">
         <li className="breadcrumb">
-          <Link to="/">Home</Link>
+          <Link to="/">home</Link>
         </li>
         {breadcrumbsNodes}
       </ul>

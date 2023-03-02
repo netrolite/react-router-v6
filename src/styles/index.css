@@ -188,3 +188,10 @@ a:hover .career .title {
   border-radius: 5px;
   border: none;
 }
+
+.form-error {
+  padding: 10px 20px;
+  background-color: crimson;
+  display: block;
+  border-radius: 5px;
+}
