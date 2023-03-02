@@ -7,13 +7,12 @@ export default function About() {
   
   console.log(isLoggedIn);
   
-  // the react rules are only broken when calling "useNavigate()" inside a hook like "useEffect".
-  // it's completely fine to call "navigate()" (the function that hook returns)
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate("/help/contact");
-    }
-  }, [isLoggedIn])
+  if (!isLoggedIn) {
+    // removes the current url from browser history
+    // if the user then clicks on "go back" button,
+    // it will redirect to the page opened before /about (because /about is deleted)
+    return <Navigate to="/help/contact" replace={true} />
+  }
 
   return (
     <>
